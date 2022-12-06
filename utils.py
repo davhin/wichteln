@@ -1,9 +1,4 @@
-from sqlalchemy import create_engine
 import random, string
-
-
-def connection_pool():
-    pass
 
 
 def solve(names_constraints):

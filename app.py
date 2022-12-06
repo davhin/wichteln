@@ -25,7 +25,7 @@ st.subheader("Enter participant names")
 text_names = st.text_input("names_text", label_visibility='collapsed')
 names = ut.convert_text_to_names(text_names)
 if not names:
-  st.warning('Please input names.')
+  st.warning('Please input names, e.g. Alice, Eve, Bob')
   st.stop()
 st.success('Thank you for inputting names.')
 names_constraints = {name: [] for name in names}
@@ -49,5 +49,5 @@ st.subheader("Confirm & Download")
 names_pseudonyms = dict(zip(names, ut.get_n_random_identifiers(len(names))))
 print(names_pseudonyms)
 ut.insert_solution_in_db(names_pseudonyms)
-solution = {key:names_pseudonyms[solution[key]] for key in solution.keys()}
+solution = {name:names_pseudonyms[solution[name]] for name in solution.keys()}
 st.json(solution)
