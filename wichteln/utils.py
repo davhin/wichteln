@@ -9,8 +9,8 @@ def solve(names_constraints):
 
 
 def convert_text_to_names(txt):
-    names = txt.split(',')
-    names = [n.split()[0] for n in names if len(n)>0]
+    names = txt.split(",")
+    names = [n.split()[0] for n in names if len(n) > 0]
     return names
 
 
@@ -26,5 +26,7 @@ def get_n_random_identifiers(n):
     letters = string.ascii_uppercase
     n_identifiers = []
     for _ in range(n):
-        n_identifiers.append(''.join(random.choice(letters) for i in range(5)))
+        n_identifiers.append(
+            "".join(random.choice(letters) for i in range(5))
+        )
     return n_identifiers
